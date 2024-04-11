@@ -5,9 +5,9 @@ import (
 	urlpath "path"
 	"strings"
 
-	"github.com/Adachi324/swagger_gin/router"
-	"github.com/Adachi324/swagger_gin/security"
 	"github.com/gin-gonic/gin"
+	"github.com/sparkle-technologies/swagger_gin/router"
+	"github.com/sparkle-technologies/swagger_gin/security"
 )
 
 type Group struct {

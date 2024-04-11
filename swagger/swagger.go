@@ -12,8 +12,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/Adachi324/swagger_gin/router"
-	"github.com/Adachi324/swagger_gin/security"
+	"github.com/sparkle-technologies/swagger_gin/router"
+	"github.com/sparkle-technologies/swagger_gin/security"
 
 	"github.com/fatih/structtag"
 	"github.com/getkin/kin-openapi/openapi3"

@@ -1,8 +1,8 @@
 package router
 
 import (
-	"github.com/Adachi324/swagger_gin/security"
 	"github.com/gin-gonic/gin"
+	"github.com/sparkle-technologies/swagger_gin/security"
 )
 
 type ContentTypeType string

@@ -1,9 +1,9 @@
 package swagger
 
 import (
-	"github.com/Adachi324/swagger_gin/router"
 	"github.com/getkin/kin-openapi/openapi3"
 	"github.com/gin-gonic/gin"
+	"github.com/sparkle-technologies/swagger_gin/router"
 )
 
 type Option func(swagger *Swagger)

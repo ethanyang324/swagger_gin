@@ -10,10 +10,10 @@ import (
 	"github.com/go-playground/validator/v10"
 	"github.com/mcuadros/go-defaults"
 
-	"github.com/Adachi324/swagger_gin/security"
 	"github.com/gin-gonic/gin"
 	"github.com/gin-gonic/gin/binding"
 	"github.com/jinzhu/copier"
+	"github.com/sparkle-technologies/swagger_gin/security"
 )
 
 type Model any

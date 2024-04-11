@@ -1,4 +1,4 @@
-module github.com/Adachi324/swagger_gin
+module github.com/sparkle-technologies/swagger_gin
 
 go 1.21.5
 

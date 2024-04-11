@@ -10,10 +10,10 @@ import (
 	"os"
 	"strings"
 
-	"github.com/Adachi324/swagger_gin/router"
-	"github.com/Adachi324/swagger_gin/swagger"
 	"github.com/getkin/kin-openapi/openapi3"
 	"github.com/gin-gonic/gin"
+	"github.com/sparkle-technologies/swagger_gin/router"
+	"github.com/sparkle-technologies/swagger_gin/swagger"
 )
 
 //go:embed templates/*
