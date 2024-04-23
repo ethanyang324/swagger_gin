@@ -8,6 +8,7 @@ import (
 	"html/template"
 	"net/http"
 	"os"
+	urlpath "path"
 	"strings"
 
 	"github.com/getkin/kin-openapi/openapi3"
@@ -71,6 +72,10 @@ func (g *SwaGin) WithErrorHandler(handler router.ErrorHandlerFunc) *SwaGin {
 	return g
 }
 
+func (g *SwaGin) SetRootPath(path string) {
+	g.rootPath = path
+}
+
 func (g *SwaGin) Mount(path string, app *SwaGin) {
 	app.rootPath = path
 	app.Engine = g.Engine
@@ -90,7 +95,7 @@ func (g *SwaGin) Use(middleware ...gin.HandlerFunc) gin.IRoutes {
 func (g *SwaGin) Group(path string, options ...Option) *Group {
 	group := &Group{
 		SwaGin:      g,
-		RouterGroup: g.RouterGroup.Group(path),
+		RouterGroup: g.RouterGroup.Group(""),
 		Path:        path,
 	}
 
@@ -154,7 +159,7 @@ func (g *SwaGin) init() {
 		return
 	}
 	gin.DisableBindValidation()
-	g.Engine.GET(g.fullPath(g.Swagger.OpenAPIUrl), func(c *gin.Context) {
+	g.Engine.GET(urlpath.Join(g.rootPath, g.fullPath(g.Swagger.OpenAPIUrl)), func(c *gin.Context) {
 		if strings.HasSuffix(g.Swagger.OpenAPIUrl, ".yml") ||
 			strings.HasSuffix(g.Swagger.OpenAPIUrl, ".yaml") {
 			y, err := g.Swagger.MarshalYAML()

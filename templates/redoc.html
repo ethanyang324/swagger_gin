@@ -11,7 +11,9 @@
 <div id="redoc"></div>
 <script>
     let options = JSON.parse('{{ .redoc_options }}')
-    Redoc.init('{{ .openapi_url }}', options, document.getElementById('redoc'))
+    let url = '{{ .openapi_url }}'
+    console.log(url)
+    Redoc.init(url, options, document.getElementById('redoc'))
 </script>
 </body>
 </html>

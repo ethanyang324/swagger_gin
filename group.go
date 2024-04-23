@@ -86,8 +86,8 @@ func (g *Group) OPTIONS(path string, router *router.Router) {
 func (g *Group) Group(path string, options ...Option) *Group {
 	group := &Group{
 		SwaGin:      g.SwaGin,
-		RouterGroup: g.RouterGroup.Group(path),
-		Path:        g.Path,
+		RouterGroup: g.RouterGroup.Group(""),
+		Path:        urlpath.Join(g.Path, path),
 		Tags:        g.Tags,
 		Handlers:    g.Handlers,
 		Securities:  g.Securities,
